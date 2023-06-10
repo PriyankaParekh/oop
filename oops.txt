@@ -1,0 +1,76 @@
+- encapsulation
+--> wrapping up data members and funcation in one capsule.
+--> all the data members are private. we can't access them outside of class, in same class we can access them.
+--> data hiding (main concept)
+--> security more
+--> if we want, we can make class - read only
+--> code reusability
+--> unit testing
+
+- inheritance
+--> we can inherite one class property to other class.
+--> access modifired used-- public protected private
+--> class parent{}
+--> class child:access_modifier parent{}
+--> super class --- sub class --- result
+    public          public        public
+    public          private       private
+    public          protected     protected
+    protected       public        protected
+    protected       protected     protected
+    protected       private       private
+    private         public        not accessible
+    private         private       not accessible
+    private         public        not accessible
+
+--> types of inheritance
+    a. single --- A --> B 
+    b. multi-level ---  A --> B --> C --> D --> E --> ...
+    c. multiple --- A,B --> C
+    d. hybrid --- A --> B,C --> D --> C --- combination of more than 1 type pf inheritance
+    e. hierarchical --- A --> B,C --> B --> D,E,F --> C --> G,H --- one class serve as parent class for more than one class
+
+--> inheritance ambiguity
+    - A,B --> C 
+    - if i have 3 classes and in C class i have 2 functions which is inherited by A and B respectively and having same name than in C class i called that func than which function is called is big question so this is called inheritance ambiguity.
+    - solution: scope resolution operator
+    C obj;
+    obj.func() -- ???
+    //right syntax:
+    obj.A:: func();
+    obj.B::func();
+
+- polymorphism
+--> many forms
+
+-types:
+--> compile time polymorphism
+    -- static polymorphism
+    a. funcation overloading
+    -- main concept: change parameters of the func.
+    -- if user only change function return type with same name of func and parameters than can not be overloaded.
+    -- with diff paramter and same return type user can overload the func.
+    -- if user only change the return type than not overloaded func.
+    -- if user change paramter return type than also func can be overloaded.
+
+    b. operator overloading
+    -- assign diff work to operator
+    -- ex: + operator --> print hello
+    -- syntax: return_type operator + (input_argument){}
+    
+--> run time polymorphism
+    - dynamic polymorphism
+    - method overriding
+    - scenario: one class has 10 func and other class inherited by this one. and that func req 8 func so that func are used by parent class and 2 funcs which is new is implemented by child class and use it.  and this is called function overriding.
+    - rules:
+    a. method of parent class and child class is same
+    b. parameter same
+    c. it is possible through inheritance
+
+- Abstraction
+--> implementation hiding
+--> ex: email sending -- we know that email is sending to this pern but we don't know the process behind that so that is hide so this is called implementation hiding.
+--> we can use access_modifier for security also.
+--> only user can change the code
+--> increases code reusability
+--> avoid duplication
